@@ -16,12 +16,6 @@ p, li {
 	line-height: 30px;
 }
 
-/* adjusting spacing */
-
-#left-column {
-	padding: 20px;
-}
-
 h1, p {
 	margin-bottom:  20px;
 }
@@ -35,11 +29,14 @@ img {
 	height:  auto;
 }
 
-/* uncomment the code below to set the grid */
+.ASCIIart {
+	font-family: 'Courier New', monospace;
+}
 
-/*#grid {
+
+#grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 }
 
 body {
@@ -53,8 +50,9 @@ body {
 }
 
 #left-column {
+
 }
 
 #right-column {
-	background: #333;
-}*/
+	
+}
