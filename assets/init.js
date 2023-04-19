@@ -26,7 +26,7 @@
                 clearInterval(interval);
             }
     
-            iterations += 1 / 2;
+            iterations += 1 / 3;
         }, 30);
     }
 
