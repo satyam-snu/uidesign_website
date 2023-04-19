@@ -1,52 +1,38 @@
-/* 
-most jquery js documents start
-with the $(document).ready function.
-This ensures the document is
-ready for the code inside of the
-function to be executed 
-*/
-
-$(document).ready(function() {
+window.onload = function(){ 
+    const constantDiv = document.getElementById("constant_div");
+    const widthConstantDiv = constantDiv.offsetWidth;
+    const heightConstantDiv = constantDiv.offsetHeight;
     
-    /* 
-    jquery follows its own syntax. it uses
-    the $ symbol to look for an element. 
-    followed by () which is the element to find
-    inside of the parentheses. followed a
-    . and an event. this event then triggers the
-    following function, executing the code
-    inside the curly brackets.
-    */
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#%$!_";
+    let interval = null;
 
-    $('body').click(function(){
-        $(this).css('background', 'yellow');
-    })
+    document.getElementById("random_letters").onmouseover = event => {
+        constantDiv.style.width = widthConstantDiv + "px";
+        constantDiv.style.height = heightConstantDiv + "px";
+        let iterations = 0;
+    
+        clearInterval(interval);
+    
+        interval = setInterval(() => {
+            event.target.innerText = event.target.innerText.split("")
+                .map((letter, index) => {
+                    if(index < iterations) {
+                        return event.target.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 33)];
+                })
+                .join("");
+    
+            if(iterations >= event.target.dataset.value.length){
+                clearInterval(interval);
+            }
+    
+            iterations += 1 / 2;
+        }, 30);
+}};
 
-    /* random background color from an array */
-
-    // let colors = ['blue', 'red', 'green', 'purple', 'yellow']
-    // $('body').click(function(){
-    //     var color = colors[Math.floor(Math.random() * colors.length)];
-    //     $(this).css('background', color);
-    // });
-
-    /* add a character to a list */
-
-    // $('li').mouseover(function(){
-    //     $(this).append('👋');
-    // });
-
-    /* make a bug follow your cursor and resize */
-
-    // $('body').append('<div id="follow">🦟</div>');
-    // $(document).on("mousemove", function (event) {
-    //     $('#follow').css({
-    //         'font-size' : event.pageY/10+'px',
-    //         'position' : 'absolute',
-    //         'left' : event.pageX+10+'px',
-    //         'top' : event.pageY+10+'px'
-    //     });
-    // });
-
-
-});
+// $(document).ready(function() {
+//     $('body').click(function(){
+//         $(this).css('background', 'yellow');
+//     })
+// });
