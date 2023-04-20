@@ -34,8 +34,7 @@ div.blog_main{
 }
 
 div.blog_body{
-    width: 50%;
-
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
 }
@@ -53,27 +52,5 @@ div.quote{
     padding: 10px;
     font-style: italic;
     text-align: center;
-}
-
-span.pic_hover{
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
-
-img.pic_hover{
-    visibility: hidden;
-    position: absolute;
-    
-    width: 700px;
-    top: 35%;
-    left: 55%;
-}
-
-span.pic_hover:hover + img.pic_hover{
-    visibility: visible;
-}
-
-span.pic_hover:active {
-
 }
 

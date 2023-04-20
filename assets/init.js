@@ -1,13 +1,14 @@
-    const constantDiv = document.getElementById("constant_div");
-    const widthConstantDiv = constantDiv.offsetWidth;
-    const heightConstantDiv = constantDiv.offsetHeight;
+// window.onload = function(){
+    // const constantDiv = document.getElementById("constant_div");
+    // const widthConstantDiv = constantDiv.offsetWidth;
+    // const heightConstantDiv = constantDiv.offsetHeight;
     
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#%$!_";
     let interval = null;
 
     document.getElementById("random_letters").onmouseover = event => {
-        constantDiv.style.width = widthConstantDiv + "px";
-        constantDiv.style.height = heightConstantDiv + "px";
+        // constantDiv.style.width = widthConstantDiv + "px";
+        // constantDiv.style.height = heightConstantDiv + "px";
         let iterations = 0;
     
         clearInterval(interval);
@@ -29,7 +30,7 @@
             iterations += 1 / 3;
         }, 30);
     }
-
+// }
 // $(document).ready(function() {
 //     $('body').click(function(){
 //         $(this).css('background', 'yellow');
