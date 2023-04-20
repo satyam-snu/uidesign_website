@@ -1,4 +1,4 @@
-// window.onload = function(){
+window.onload = function(){
     // const constantDiv = document.getElementById("constant_div");
     // const widthConstantDiv = constantDiv.offsetWidth;
     // const heightConstantDiv = constantDiv.offsetHeight;
@@ -30,7 +30,7 @@
             iterations += 1 / 3;
         }, 30);
     }
-// }
+}
 // $(document).ready(function() {
 //     $('body').click(function(){
 //         $(this).css('background', 'yellow');
