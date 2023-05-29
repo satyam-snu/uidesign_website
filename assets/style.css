@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap'); /* Korean */
+
+
+html {
+    scroll-snap-type: y mandatory;
+}
 
 body {
     font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    scroll-snap-type: y mandatory;
 }
 
 /* nav part starts */
@@ -9,8 +17,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
     align-items: center;
+    padding: 40px;
 }
 
 .nav_link{
@@ -27,36 +35,84 @@ a:link {
     background-color: transparent;
     text-decoration: none;
 }
+
+a:visited {
+    color: black;
+}
 /* nav part ends */
 
 
 /* main body starts */
-div.blog_main{
-    display: flex;
+div.body_main{
+    /* display: flex; */
     justify-content: center;
+    box-sizing: content-box;
 }
 
-div.blog_body{
-    width: 75%;
+div.body_head{
+    width: 98svw;
+    margin-top: 10svh;
+    margin-left: 2svw;
     display: flex;
     flex-direction: column;
+    box-sizing: content-box;
 }
 
-#constant_div_1 {
-    margin: 0%;
-    padding: 0%;
+p#random_letters_2{
+    font-family: 'Song Myung', serif;
+    margin-block: 0;
 }
 
-div.blog_title{
+div.body_title{
     font-weight: bold;
-    font-size: 112px;
-    margin: 0%;
-    padding: 0%;
+    font-size: 10rem;
+    line-height: 0em;
 }
 
-iframe {
-    width: 100%;
-    /* height: 100%; */
+section {
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
 }
 
+div.body_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90svh;
+    width: 93svw;
+    padding: 5svh;
+}
 
+div.text{
+    background-color: blueviolet;
+    color: green;
+}
+
+.loader {
+    z-index: 3;
+    width: 100vw;
+    /* height: 100vh; */
+    opacity: 0;
+    animation: page-up 1.5s ease 0s none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background: #acb6e5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@keyframes page-up {
+0% {
+    transform: translateY(0%);
+    opacity: 1;
+    height: 100vh;
+}
+100% {
+    transform: translateY(-100%);
+    opacity: 1;
+    height: 0vh;
+}
+}
